@@ -13,7 +13,16 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.13.8",
+    "mongoose": "^5.13.9",
     "morgan": "^1.10.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melbrewer323/Workout-Tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/melbrewer323/Workout-Tracker/issues"
+  },
+  "homepage": "https://github.com/melbrewer323/Workout-Tracker#readme"
 }
