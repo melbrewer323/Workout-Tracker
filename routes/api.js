@@ -11,3 +11,23 @@ router.post("/api/workouts", (req, res) => {
             res.json(err)
         })
 });
+router.get("/api/workouts", (req, res) => {
+    Workout.aggregate([
+        {
+            $addFields: {
+                totalDuration: {
+                    $sum: '$exercise.duration'
+                },
+            },
+        },
+    ])
+        .then((workout) => {
+             res.json(workout)
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+});
+
+
+module.exports = router;
