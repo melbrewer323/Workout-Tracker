@@ -29,5 +29,27 @@ router.get("/api/workouts", (req, res) => {
         })
 });
 
+router.put("/api/workouts/:id", (req, res) => {
+    Workout.findByIdAndUpdate(
+        req.params.id,
+        { $push: { exercise: req.body } },
+        { new: true, runValidators: true }
+    )
+        .then((workout) => {
+            res.json(workout)
+        })
+        .catch((err) => {
+            res.json(err)
+        })
+});
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
